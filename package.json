@@ -1,0 +1,24 @@
+{
+  "name": "zhdate",
+  "version": "1.0.0",
+  "description": "一个格式化的 Date 函数。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhictory/zhDate.git"
+  },
+  "keywords": [
+    "zhdate",
+    "date",
+    "npm"
+  ],
+  "author": "zhictory",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhictory/zhDate/issues"
+  },
+  "homepage": "https://github.com/zhictory/zhDate#readme"
+}

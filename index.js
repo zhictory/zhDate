@@ -14,6 +14,10 @@ class zhDate {
       return this.compatibleFormat(this.date);
     }
   }
+  // 获取中文版时间
+  getChineseTime() {
+    return this.getYear() + this.getMonth() + this.getDate() + this.getDay() + this.getHour() + this.getMinute() + this.getSecond();
+  }
   // 获取年
   getYear() {
     return this.date.getFullYear() + '年';
@@ -90,4 +94,4 @@ class zhDate {
   }
 }
 
-let date = new zhDate();
+module.exports = zhDate;
