@@ -108,7 +108,4 @@ class zhDate {
   }
 }
 
-console.log(new zhDate().getFormatTime());
-console.log(new zhDate().getChineseTime());
-
 module.exports = zhDate;
