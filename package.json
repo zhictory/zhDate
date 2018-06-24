@@ -2,7 +2,7 @@
   "name": "zhdate",
   "version": "1.0.5",
   "description": "一个格式化的 Date 函数。",
-  "main": "dist/bundle.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./build/webpack.config.js"
