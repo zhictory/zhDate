@@ -1,6 +1,6 @@
 {
   "name": "zhdate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "一个格式化的 Date 函数。",
   "main": "src/index.js",
   "scripts": {
