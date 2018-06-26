@@ -1,3 +1,5 @@
+import './index.less';
+
 class zhDate {
   constructor(opt = { standar: 24 }) {
     this.date = new Date();
