@@ -52,6 +52,17 @@ module.exports = {
     ]
   },
 
+  resolve: {
+
+    modules: [
+      path.resolve(__dirname, 'node_modules'),
+      'node_modules'
+    ],
+
+    extensions: ['.js', '.css', '.json']
+
+  },
+
   plugins: [
     new UglifyPlugin(),
     new HtmlWebpackPlugin({
@@ -59,6 +70,16 @@ module.exports = {
       template: 'src/index.html'
     }),
     new ExtractTextPlugin('[name].css')
-  ]
+  ],
+
+  devServer: {
+
+    before(app){
+      app.get('/api', (req, res) => {
+        res.send('Zhdate is a module that includes a formatted function for Date.');
+      })
+    }
+    
+  },
 
 };

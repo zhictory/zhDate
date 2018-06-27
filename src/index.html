@@ -7,8 +7,25 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="zhdate__info">zhdate is a formatted function</div>
-  <div class="zhdate__bg"></div>
+  <input id="j_getInfo" class="zhdate__get-info-btn" type="button" value="What's zhdate?">
+  <!-- <div class="zhdate__bg"></div> -->
   <div><img src="./assets/1.png" alt="zhdate"></div>
+  <script>
+    let btn = document.querySelector('#j_getInfo');
+    btn.addEventListener('click', ()=>{
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status >= 200 && xhr.status <= 300 || xhr.status === 304) {
+            alert(xhr.responseText);
+          } else {
+            alert('error');         
+          }
+        }
+      };
+      xhr.open('get', '/api', true);
+      xhr.send(null);
+    }, false);
+  </script>
 </body>
 </html>
