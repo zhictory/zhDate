@@ -1,6 +1,6 @@
 {
   "name": "zhdate",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "一个格式化的 Date 函数。",
   "main": "dist/bundle.js",
   "scripts": {
