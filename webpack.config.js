@@ -1,10 +1,9 @@
 const path = require('path');
-const UglifyPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
-
-module.exports = {
+module.exports = (env, argv) => ({
 
   entry: './src/index.js',
 
@@ -64,17 +63,23 @@ module.exports = {
   },
 
   plugins: [
-    new UglifyPlugin(),
+    new webpack.ProvidePlugin({
+      'log': path.resolve(__dirname, 'src/log')
+    }),
+    new webpack.DefinePlugin({
+      'NODE_ENV': JSON.stringify(argv.mode)
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html'
     }),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
   ],
 
   devServer: {
 
     before(app){
+      console.log(env);
       app.get('/api', (req, res) => {
         res.send('Zhdate is a module that includes a formatted function for Date.');
       })
@@ -82,4 +87,4 @@ module.exports = {
     
   },
 
-};
+});

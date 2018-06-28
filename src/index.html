@@ -11,7 +11,9 @@
   <!-- <div class="zhdate__bg"></div> -->
   <div><img src="./assets/1.png" alt="zhdate"></div>
   <script>
+
     let btn = document.querySelector('#j_getInfo');
+
     btn.addEventListener('click', ()=>{
       let xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
@@ -26,6 +28,7 @@
       xhr.open('get', '/api', true);
       xhr.send(null);
     }, false);
+
   </script>
 </body>
 </html>

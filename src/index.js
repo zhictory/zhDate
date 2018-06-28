@@ -1,4 +1,4 @@
-import './index.less';
+require('./index.less');
 
 class zhDate {
   constructor(opt = { standar: 24 }) {
@@ -109,5 +109,7 @@ class zhDate {
     return this.date.getHours() < 12 ? 'AM' : 'PM';
   }
 }
+
+log(1,2,3);
 
 module.exports = zhDate;
