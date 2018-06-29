@@ -1,4 +1,10 @@
-require('./index.less');
+import './index.less';
+
+// import 作为一个方法使用，传入模块名即可，返回一个 promise 来获取模块暴露的对象
+// 注释 webpackChunkName: "lodash" 可以用于指定 chunk 的名称，在输出文件时有用
+import(/* webpackChunkName: "lodash" */ 'lodash').then((_) => { 
+  console.log(_.lash([1, 2, 3])) // 打印 3
+});
 
 class zhDate {
   constructor(opt = { standar: 24 }) {
@@ -109,7 +115,5 @@ class zhDate {
     return this.date.getHours() < 12 ? 'AM' : 'PM';
   }
 }
-
-log(1,2,3);
 
 module.exports = zhDate;
