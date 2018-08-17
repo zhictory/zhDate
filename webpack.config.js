@@ -90,11 +90,12 @@ module.exports = (env, argv) => ({
   resolve: {
 
     modules: [
-      path.resolve(__dirname, 'node_modules'),
-      'node_modules'
+      path.resolve(__dirname, 'node_modules')
     ],
 
-    extensions: ['.js', '.css', '.json']
+    extensions: ['.js', '.css', '.json'],
+
+    mainFiles: ['index']
 
   },
 
@@ -146,7 +147,7 @@ module.exports = (env, argv) => ({
       cacheGroups: {
         vendor: {
           chunks: "initial",
-          test: 'vendor',
+          test: path.resolve(__dirname, 'node_modules'),
           name: "vendor", // 使用 vendor 入口作为公共部分
           enforce: true,
         },
